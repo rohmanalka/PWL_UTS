@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\WelcomeController;
 
 /*
@@ -16,3 +17,4 @@ use App\Http\Controllers\WelcomeController;
 */
 
 Route::get('/', [WelcomeController::class, 'index']);
+Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
