@@ -33,10 +33,10 @@
                     </span>
                     <h4 class="text-section">Components</h4>
                 </li>
-                <li class="nav-item {{ $activeMenu == 'base' ? 'active' : '' }}">
-                    <a href="{{ url('/') }}" class="nav-link">
-                        <i class="fas fa-layer-group"></i>
-                        <p>Base</p>
+                <li class="nav-item {{ $activeMenu == 'datamahasiswa' ? 'active' : '' }}">
+                    <a href="{{ url('/mahasiswa') }}" class="nav-link">
+                        <i class="fas fa-portrait"></i>
+                        <p>Data Mahasiswa</p>
                     </a>
                 </li>
                 <li class="nav-item {{ $activeMenu == 'avatars' ? 'active' : '' }}">
