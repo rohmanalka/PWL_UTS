@@ -31,7 +31,7 @@
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>
                     </span>
-                    <h4 class="text-section">Components</h4>
+                    <h4 class="text-section">MENU</h4>
                 </li>
                 <li class="nav-item {{ $activeMenu == 'datamahasiswa' ? 'active' : '' }}">
                     <a href="{{ url('/mahasiswa') }}" class="nav-link">
@@ -39,14 +39,16 @@
                         <p>Data Mahasiswa</p>
                     </a>
                 </li>
-                <li class="nav-item {{ $activeMenu == 'avatars' ? 'active' : '' }}">
-                    <a href="components/avatars.html" class="nav-link">
-                        <span class="sub-item">Avatars</span>
+                <li class="nav-item {{ $activeMenu == 'matkul' ? 'active' : '' }}">
+                    <a href="{{ url('/matkul') }}" class="nav-link">
+                        <i class="fas fa-graduation-cap"></i>
+                        <p>Mata Kuliah</p>
                     </a>
                 </li>
-                <li class="nav-item {{ $activeMenu == 'buttons' ? 'active' : '' }}">
-                    <a href="components/buttons.html" class="nav-link">
-                        <span class="sub-item">Buttons</span>
+                <li class="nav-item {{ $activeMenu == 'tugas' ? 'active' : '' }}">
+                    <a href="{{ url('/tugas') }}" class="nav-link">
+                        <i class="fas fa-book"></i>
+                        <p>Tugas</p>
                     </a>
                 </li>
             </ul>

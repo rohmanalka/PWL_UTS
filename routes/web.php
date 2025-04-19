@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\MatkulController;
 use App\Http\Controllers\WelcomeController;
 use App\Models\MahasiswaModel;
 
@@ -29,4 +30,16 @@ Route::group(['prefix' => 'mahasiswa'], function(){
     Route::get('/{id}/delete_ajax', [MahasiswaController::class, 'confirm_ajax']);
     Route::delete('/{id}/delete_ajax', [MahasiswaController::class, 'delete_ajax']);
     Route::get('/{id}/show_ajax', [MahasiswaController::class, 'show_ajax']);
+});
+
+Route::group(['prefix' => 'matkul'], function(){
+    Route::get('/', [MatkulController::class, 'index']);
+    Route::post('/list', [MatkulController::class, 'list']);
+    Route::get('/create_ajax', [MatkulController::class, 'create_ajax']);
+    Route::post('/ajax', [MatkulController::class, 'store_ajax']);
+    Route::get('/{id}/edit_ajax', [MatkulController::class, 'edit_ajax']);
+    Route::put('/{id}/update_ajax', [MatkulController::class, 'update_ajax']);
+    Route::get('/{id}/delete_ajax', [MatkulController::class, 'confirm_ajax']);
+    Route::delete('/{id}/delete_ajax', [MatkulController::class, 'delete_ajax']);
+    Route::get('/{id}/show_ajax', [MatkulController::class, 'show_ajax']);
 });

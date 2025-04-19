@@ -4,18 +4,18 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             <h3 class="card-title">{{ $page->title }}</h3>
             <div class="card-tools">
-                <button onclick="modalAction('{{ url('mahasiswa/create_ajax') }}')" class="btn btn-sm btn-success mt-1">Tambah
+                <button onclick="modalAction('{{ url('matkul/create_ajax') }}')" class="btn btn-sm btn-success mt-1">Tambah
                     Data</button>
             </div>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="display table table-striped table-hover" id="table_mahasiswa">
+                <table class="display table table-striped table-hover" id="table_matkul">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>NIM</th>
-                            <th>NAMA</th>
+                            <th>NAMA MATAKULIAH</th>
+                            <th>NAMA DOSEN</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -36,11 +36,11 @@
                 });
             }
             $(document).ready(function() {
-                var dataMahasiswa = $('#table_mahasiswa').DataTable({
+                var dataMatkul = $('#table_matkul').DataTable({
                     // serverSide: true, jika ingin menggunakan server side processing
                     serverSide: true,
                     ajax: {
-                        "url": "{{ url('mahasiswa/list') }}",
+                        "url": "{{ url('matkul/list') }}",
                         "dataType": "json",
                         "type": "POST"
                     },
@@ -51,14 +51,14 @@
                         orderable: false,
                         searchable: false
                     }, {
-                        data: "nim",
+                        data: "nama_matkul",
                         className: "",
                         // orderable: true, jika ingin kolom ini bisa diurutkan
                         orderable: true,
                         // searchable: true, jika ingin kolom ini bisa dicari
                         searchable: true
                     }, {
-                        data: "nama",
+                        data: "nama_dosen",
                         className: "",
                         orderable: true,
                         searchable: true
