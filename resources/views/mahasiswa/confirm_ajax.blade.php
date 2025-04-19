@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Kesalahan</h5>
-                <button type="button" class="close" data-dismiss="modal" aria- label="Close"><span
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body">
@@ -23,7 +23,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Hapus Data Mahasiswa</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria- label="Close"><span
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
@@ -56,41 +56,40 @@
         
         $(document).ready(function() {
             $("#form-delete").validate({
-                    rules: {},
-                    submitHandler: function(form) {
-                        $.ajax({
-                                url: form.action,
-                                type: form.method,
-                                data: $(form).serialize(),
-                                success: function(response) {
-                                    if (response.status) {
-                                        $('#myModal').modal('hide');
-                                        swal("Berhasil", response.message, {
-                                            icon: "success",
-                                            buttons: {
-                                                confirm: {
-                                                    className: "btn btn-success"
-                                                }
-                                            }
-                                        });
-                                        dataMahasiswa.ajax.reload();
-                                    } else {
-                                        $('.error-text').text('');
-                                        $.each(response.msgField, function(prefix, val) {
-                                            $('#error-' + prefix).text(val[0]);
-                                        });
-                                        swal("Terjadi Kesalahan", response.message, {
-                                            icon: "error",
-                                            buttons: {
-                                                confirm: {
-                                                    className: "btn btn-danger"
-                                                }
-                                            }
-                                        });
+                rules: {},
+                submitHandler: function(form) {
+                    $.ajax({
+                        url: form.action,
+                        type: form.method,
+                        data: $(form).serialize(),
+                        success: function(response) {
+                            if (response.status) {
+                                $('#myModal').modal('hide');
+                                swal("Berhasil", response.message, {
+                                    icon: "success",
+                                    buttons: {
+                                        confirm: {
+                                            className: "btn btn-success"
+                                        }
                                     }
-                                }
+                                });
+                                dataMatkul.ajax.reload();
+                            } else {
+                                $('.error-text').text('');
+                                $.each(response.msgField, function(prefix, val) {
+                                    $('#error-' + prefix).text(val[0]);
+                                });
+                                swal("Terjadi Kesalahan", response.message, {
+                                    icon: "error",
+                                    buttons: {
+                                        confirm: {
+                                            className: "btn btn-danger"
+                                        }
+                                    }
+                                });
                             }
-                        });
+                        }
+                    });
                     return false;
                 },
                 errorElement: 'span',
